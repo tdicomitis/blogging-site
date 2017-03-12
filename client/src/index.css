@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.main-nav {
+  background-color: deeppink;
+  color: aqua;
+}
+
+.navbar-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+}
+
+.nav-item {
+  color: white;
+}
+
+.active-nav-btn {
+  font-size: 22px;
+  background-color: limegreen;
+}
+
+.flex-nav-items {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cat-meow{
+  max-width: 40%;
+}
+
+.my-pic {
+  max-height: 120px;
+}
+
+.para-about-flex {
+  display: flex;
+  justify-content: center;
+}
