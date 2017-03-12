@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Paragraph from "./Paragraph";
 
 class HomeContainer extends Component {
   render() {
     return (
       <div className="">
-        <div className="">
-          <h2>Welcome to Home Container</h2>
+        <div className="my-name-flex">
+          <h1>Taryn Dicomitis</h1>
         </div>
         { this.props.children }
+        <div className="js-me-flex">
+          <h6> Full Stack Javascript Developer </h6>
+        </div>
       </div>
     );
   }

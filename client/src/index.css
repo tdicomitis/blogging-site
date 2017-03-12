@@ -5,7 +5,7 @@ body {
 }
 
 .main-nav {
-  background-color: deeppink;
+  background-color: aquamarine;
   color: aqua;
 }
 
@@ -22,7 +22,7 @@ body {
 
 .active-nav-btn {
   font-size: 22px;
-  background-color: limegreen;
+  background-color: hotpink;
 }
 
 .flex-nav-items {
@@ -39,6 +39,16 @@ body {
 }
 
 .para-about-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.my-name-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.js-me-flex {
   display: flex;
   justify-content: center;
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Paragraph from './Paragraph';
 
 class AboutContainer extends Component {
   render() {
@@ -16,7 +15,7 @@ class AboutContainer extends Component {
             </ul>
         </div>
         <div>
-          <p className="para-about-flex"> hello! this is a bit about me</p>
+          <p className="para-about-flex"> <Paragraph data={["Yo, here is a bunch of random stuff about me"]} /> </p>
         </div>
       </div>
     );
