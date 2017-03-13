@@ -6,9 +6,8 @@ var postsRouter = require('./routes/post');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/blogging-site');
 
-
-app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
 app.set('port', process.env.PORT || 3001);
 

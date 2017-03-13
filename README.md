@@ -71,6 +71,19 @@ Router.get('/', function(req, res){
 });
 ```
 
+We also need a `get` so we can get a post by the id, so we can edit, delete, etc
+```js
+Router.get('/:bear_id', function(req, res){
+ Bear.findById(req.params.bear_id, function(err, data){
+   if(err){
+     console.log(err)
+   } else {
+     res.json(data)
+   }
+ })
+});
+```
+
 #### Post
 
 ```js
@@ -88,4 +101,38 @@ Router.post('/', function(req, res){
  })
 });
 
+```
+
+#### Delete
+```js
+Router.delete('/:post', function(req, res){
+ Post.remove({ _id: req.params.post }, function(err){
+   if(err){
+     console.log(err)
+   }else{
+     res.json({ message: "awe, deleted the post😢" })
+   }
+ })
+});
+```
+#### Put
+```js
+Router.put('/:post', function(req, res){
+ Post.findById(req.params.post, function(err, post){
+   if(err){
+     console.log(err)
+   } else {
+     post.content = req.body.content ? req.body.content : post.content;
+     post.title = req.body.title ? req.body.title : post.title;
+
+     post.save(function(er, updatedPost){
+       if(er){
+         console.log(er)
+       } else {
+         res.json(updatedPost);
+       }
+     })
+   }
+ })
+});
 ```
