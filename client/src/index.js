@@ -7,7 +7,8 @@ import App from './App';
 import Home from './HomeContainer';
 import About from './AboutContainer';
 import Blog from './BlogContainer';
-import Hello from './Hello';
+import Experience from './ExperienceContainer';
+import Post from './PostContainer';
 
 ReactDOM.render((
   <Router history={browserHistory}>
@@ -15,13 +16,14 @@ ReactDOM.render((
     <Route path="/" component={App}>
 
       <Route path="/home" component={Home}>
-        <Route path="hello" component={Hello}/>
       </Route>
 
       <Route path="/about" component={About} />
       <Route path="/blog" component={Blog} />
+      <Route path="/post" component={Post} />
+      <Route path="experience" component={Experience} />
 
     </Route>
-    
+
   </Router>
 ),document.getElementById('root'));

@@ -2,11 +2,23 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: darkgrey;
+}
+
+.home-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+}
+
+.head-title-flex {
+  display: flex;
+  justify-content: center;
 }
 
 .main-nav {
   background-color: aquamarine;
-  color: aqua;
 }
 
 .navbar-flex {
@@ -16,39 +28,29 @@ body {
   height: 100px;
 }
 
-.nav-item {
-  color: white;
-}
-
-.active-nav-btn {
+.active-nav-btn-flex {
+  display: flex;
+  justify-content: space-bet;
   font-size: 22px;
   background-color: hotpink;
-}
-
-.flex-nav-items {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.cat-meow{
-  max-width: 40%;
 }
 
 .my-pic {
   max-height: 120px;
 }
 
-.para-about-flex {
-  display: flex;
-  justify-content: center;
-}
-
-.my-name-flex {
-  display: flex;
-  justify-content: center;
-}
-
 .js-me-flex {
   display: flex;
   justify-content: center;
+}
+
+.para-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.cute-pic {
+  display: flex;
+  justify-content: center;
+  max-height: 175px;
 }

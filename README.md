@@ -25,7 +25,7 @@ In this project, my goal will be to create a basic blog/portfolio website.
 ---
 ### CRUD
 
-First, we need to create a new directory called `models`. Then, we will create a new file called `post.js` to store our blueprint for Post.
+First, we need to create a new directory called `models`. Then, we will create a new file in `models` called `post.js` to store our blueprint for Post.
 
 ```js
 var mongoose = require('mongoose');
@@ -38,7 +38,7 @@ var PostSchema = new mongoose.Schema({
 module.export = mongoose.model('Post', PostSchema);
 ```
 
-Now, in our `routes` directory, we will implement our data for CRUD.
+Now, in our existing `routes` directory, we will implement our data for CRUD.
 
 We need to make sure we *export* our PostSchema from `/models/post.js` and then *import* to `/routes/post.js`
 
@@ -55,7 +55,7 @@ var express = require('express');
 var Post = require('../models/post');
 var Router = new express.Router();
 ```
-Once we have this set up, we can begin to implement CRUD.
+Once we have this set up, we can begin to implement CRUD. When we are implementing each CRUD component, it is important to test them using `Postman` before moving on to the next.
 
 #### Get
 
@@ -136,3 +136,154 @@ Router.put('/:post', function(req, res){
  })
 });
 ```
+
+#### Clean Up
+
+To clean up our code, we will refactor:
+
+```js
+Router.route('/')
+  .get(function(req, res){
+   Post.find(function(err, data){
+     if(err){
+       console.log("Error finding post")
+     } else {
+       res.json(data)
+     }
+   })
+  })
+
+.post(function(req, res){
+ var newPost = new Post();
+ newPost.content = req.body.content;
+ newPost.title = req.body.title;
+
+ newPost.save(function(err, data){
+   if(err){
+     console.log(err)
+   } else {
+     res.json(data);
+   }
+ })
+});
+
+Router.route('/:post_id')
+.get(function(req, res){
+ Post.findById(req.params.post_id, function(err, data){
+   if(err){
+     console.log(err)
+   } else {
+     res.json(data)
+   }
+  })
+})
+
+.delete(function(req, res){
+ Post.remove({ _id: req.params.post }, function(err){
+   if(err){
+     console.log(err)
+   }else{
+     res.json({ message: "successfully deleted post" })
+   }
+ })
+})
+
+.put(function(req, res){
+ Post.findById(req.params.post, function(err, post){
+   if(err){
+     console.log(err)
+   } else {
+     post.content = req.body.content ? req.body.content : post.content;
+     post.title = req.body.title ? req.body.title : post.title;
+
+     post.save(function(err, updatedPost){
+       if(err){
+         console.log(err)
+       } else {
+         res.json(updatedPost);
+       }
+     })
+   }
+ })
+});
+
+
+module.exports = Router;
+```
+----
+#### Adding a Post Container
+
+Now, we will be adding a `PostContainer`, so that we can post a new blog. First, we start by creating a new file in our directory called `PostContainer.js`. We will set up this container like we have the others (blog, home, about, experience).
+
+Here is what our `PostContainer.js` file will look like:
+
+```js
+import React, { Component } from 'react';
+
+class PostContainer extends Component {
+  render() {
+    return (
+      <div className="">
+        <div className="head-title-flex">
+          <h1>Post a New Blog!</h1>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default PostContainer;
+```
+We need to define `PostContainer` and make sure we export it at the bottom of our code.
+
+Once we have done this, we will then render it in our `index.js` file.
+
+### Rendering in index.js
+In our index.js page, we already have code from adding our other containers.
+
+```js
+ReactDOM.render((
+  <Router history={browserHistory}>
+
+    <Route path="/" component={App}>
+
+      <Route path="/home" component={Home}>
+      </Route>
+
+      <Route path="/about" component={About} />
+      <Route path="/blog" component={Blog} />
+      <Route path="experience" component={Experience} />
+
+    </Route>
+
+  </Router>
+),document.getElementById('root'));
+```
+Now, we just need to add the route for our `PostContainer` and make sure we are importing to `index.js`:
+
+```js
+<Route path="/post" component={Post} />
+```
+
+Import:
+```js
+import Post from './PostContainer';
+```
+### Link to Post
+I have chosen to add my `PostContainer` inside the `BlogContainer` file. This will make it easily accessible when I want to create a new blog.
+
+To do so, import `Link` on the top of the `BlogContainer` code.
+
+```js
+import { Link } from 'react-router';
+```
+
+Next, add in the link component in the existing code, in its own `<div> </div>`:
+
+```js
+<Link to="/post" activeClassName="active-nav-btn-flex" className="nav-item"> Post a Blog </Link>
+```
+
+Now, test it by going to the `BlogContainer` page and seeing if we have a *Post a Blog* link that will then take us to our `PostContainer` page.
+
+---- 

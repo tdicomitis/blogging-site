@@ -6,16 +6,14 @@ var Navbar = React.createClass({
     return(
       <nav className="main-nav">
         <div className="navbar-flex">
-            <div>
-              <img className="cat-meow" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsEmlXfa_XrnoOxmFkK1b1KcTlJSDQk4S8cOYwRUGJ9pS7bUrGHA" />
-            </div>
-            <div className="flex-nav-items">
-              <Link to="/home" activeClassName="active-nav-btn" className="nav-item"> Home </Link>
-              <Link to="/about" activeClassName="active-nav-btn" className="nav-item"> About Me </Link>
-              <Link to="/blog" activeClassName="active-nav-btn" className="nav-item"> Blog </Link>
-            </div>
+          <div>
+            <Link to="/home" activeClassName="active-nav-btn-flex" className="nav-item"> Home </Link>
+            <Link to="/about" activeClassName="active-nav-btn-flex" className="nav-item"> About Me </Link>
+            <Link to="/blog" activeClassName="active-nav-btn-flex" className="nav-item"> Blog </Link>
+            <Link to="/experience" activeClassName="active-nav-btn-flex" className="nav-item"> Experience </Link>
           </div>
-        </nav>
+        </div>
+      </nav>
     )
   }
 });
