@@ -331,3 +331,12 @@ var PostContainer = React.createClass({
   }
 });
 ```
+----
+#### View All Blogs
+Our goal is to create a function that enables the viewers to see all the blog posts. We will get all blogs from the server, store in state and pass down to the blog list.
+
+First: we define the initial state
+Second: Create a function to get data from server
+Third: Call function upon component mounting (console log data to ensure it works)
+
+In my wireframe, my `BlogContainer` page will be the one that hosts all of my blog posts to view, so I do not need to create a new file.

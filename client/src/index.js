@@ -22,7 +22,6 @@ ReactDOM.render((
       <Route path="/blog" component={Blog} />
       <Route path="/post" component={Post} />
       <Route path="experience" component={Experience} />
-
     </Route>
 
   </Router>
