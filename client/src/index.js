@@ -9,6 +9,7 @@ import About from './AboutContainer';
 import Blog from './BlogContainer';
 import Experience from './ExperienceContainer';
 import Post from './PostContainer';
+import ShowPost from './ShowPostContainer';
 
 ReactDOM.render((
   <Router history={browserHistory}>
@@ -21,7 +22,8 @@ ReactDOM.render((
       <Route path="/about" component={About} />
       <Route path="/blog" component={Blog} />
       <Route path="/post" component={Post} />
-      <Route path="experience" component={Experience} />
+      <Route path="/experience" component={Experience} />
+      <Route path="/viewablog/:blog_id" component={ShowPost} />
     </Route>
 
   </Router>

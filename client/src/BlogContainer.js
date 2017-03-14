@@ -27,7 +27,7 @@ var BlogContainer = React.createClass({
       <div className="head-title-flex">
         <h1>Welcome to my Blog!</h1>
           { this.state.allblogs ? <BlogList posts={this.state.allblogs} /> : null }
-        <div>
+        <div className="post-blog-flex">
           <Link to="/post" activeClassName="active-nav-btn-flex" className="nav-item"> Post a Blog </Link>
         </div>
       </div>

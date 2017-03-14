@@ -49,6 +49,11 @@ body {
   justify-content: center;
 }
 
+.post-blog-flex {
+  display: flex;
+  align-items: flex-start;;
+}
+
 .cute-pic {
   display: flex;
   justify-content: center;

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import BlogList from './BlogList';
+import { Link } from 'react-router';
 
 var PostCard = function (props) {
   return (
     <div className="">
-      <p>{props.content}</p>
-      <p>{props.title}</p>
+      <Link to={"/viewablog/" + props.id} > {props.content}</Link>
+      <p> {props.title} </p>
     </div>
   )
 };
