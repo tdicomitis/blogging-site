@@ -9,10 +9,10 @@ var PostContainer = React.createClass({
       title: null,
     }
   },
-  updateName: function(content){
+  updateContent: function(content){
     return this.setState({ content: content });
   },
-  updateSpecies: function(title){
+  updateTitle: function(title){
     return this.setState({ title: title })
   },
   handleSubmit: function(e) {
@@ -32,10 +32,10 @@ var PostContainer = React.createClass({
   },
   render: function() {
     return (
-      <div className="jumbotron">
+      <div className="">
         <h1> Post a New Blog! </h1>
         <PostForm updateTitle={this.updateTitle}
-          updateContent={this.updateContene}
+          updateContent={this.updateContent}
           handleSubmit={this.handleSubmit}
         />
       </div>
