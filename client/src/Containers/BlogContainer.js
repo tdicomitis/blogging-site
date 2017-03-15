@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import $ from 'jquery';
-import BlogList from './BlogList';
+import PostList from '../PostList';
 
 var BlogContainer = React.createClass({
   getInitialState: function() {
     return {
-      allblogs: null
+      posts: null
     }
   },
   componentDidMount: function() {
@@ -19,16 +19,16 @@ var BlogContainer = React.createClass({
       method: "GET"
     }).done(function(data){
       console.log(data, "POST FROM SERVER!")
-      self.setState({ allblogs: data })
+      self.setState({ posts: data })
     })
   },
   render: function() {
     return (
-      <div className="head-title-flex">
-        <h1>Welcome to my Blog!</h1>
-          { this.state.allblogs ? <BlogList posts={this.state.allblogs} /> : null }
-        <div className="post-blog-flex">
-          <Link to="/post" activeClassName="active-nav-btn-flex" className="nav-item"> Post a Blog </Link>
+      <div>
+        <h1 className="blog-header">Welcome to my Blog!</h1>
+          { this.state.posts ? <PostList posts={this.state.posts} /> : null }
+        <div>
+          <Link to="/post" activeClassName="active-nav-btn" className="nav-item"> Post a Blog </Link>
         </div>
       </div>
     )

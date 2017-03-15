@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PostCard from './PostCard';
 
 
-var BlogList = React.createClass({
+var PostList = React.createClass({
   render: function(){
-    var self=this;
       var postCards = this.props.posts.map(function(item){
         return <PostCard content={item.content} title={item.title} id={item._id}
               />
@@ -17,4 +16,4 @@ var BlogList = React.createClass({
     }
 });
 
-export default BlogList;
+export default PostList;

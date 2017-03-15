@@ -49,13 +49,20 @@ body {
   justify-content: center;
 }
 
-.post-blog-flex {
+.nav-item-post {
+  text-align: left;
+}
+
+.all-blogs-flex {
   display: flex;
-  align-items: flex-start;;
 }
 
 .cute-pic {
   display: flex;
   justify-content: center;
   max-height: 175px;
+}
+
+.blog-header {
+  text-align: center;
 }

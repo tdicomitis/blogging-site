@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BlogList from './BlogList';
+import PostList from './PostList';
 import { Link } from 'react-router';
 
 var PostCard = function (props) {

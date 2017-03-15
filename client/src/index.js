@@ -4,12 +4,12 @@ import {Route, Router, browserHistory} from 'react-router';
 
 import './index.css';
 import App from './App';
-import Home from './HomeContainer';
-import About from './AboutContainer';
-import Blog from './BlogContainer';
-import Experience from './ExperienceContainer';
-import Post from './PostContainer';
-import ShowPost from './ShowPostContainer';
+import Home from './Containers/HomeContainer';
+import About from './Containers/AboutContainer';
+import Blog from './Containers/BlogContainer';
+import Experience from './Containers/ExperienceContainer';
+import Post from './Containers/PostContainer';
+import ShowPost from './Containers/ShowPostContainer';
 
 ReactDOM.render((
   <Router history={browserHistory}>

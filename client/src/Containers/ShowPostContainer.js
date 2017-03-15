@@ -4,26 +4,26 @@ import $ from 'jquery';
 var ShowPostContainer = React.createClass({
   getInitialState: function() {
     return {
-      posts: null
+      post: null
     }
   },
-  loadPostsFromServer: function() {
+  loadPostFromServer: function() {
     var self=this;
     $.ajax({
       url: '/api/posts/' + this.props.params.blog_id,
       method: "GET"
     }).done(function(data){
-      console.log(data, "ONE POST FROM SERVER!")
-      self.setState({ posts: data })
+      console.log (data, "THIS IS DATA FOR ONE POST")
+      self.setState({ post: data })
     })
   },
   componentDidMount: function() {
-    this.loadPostsFromServer()
+    this.loadPostFromServer()
   },
   render: function() {
     return (
       <div>
-        <h1>ONE BLOG!</h1>
+        <h1> {this.state.post ? this.state.post.title : "Loading"} </h1>
         <p> { this.props.params.blog_id } </p>
       </div>
     )
