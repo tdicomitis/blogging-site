@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class HomeContainer extends Component {
+var HomeContainer = React.createClass({
   render() {
     return (
       <div className="home-flex-container">
         <div>
           <img className="cute-pic"
-            src="https://freeiconshop.com/wp-content/uploads/edd/code-flat.png"
+            src="https://freeiconshop.com/wp-content/uploads/edd/code-flat.png" alt="presentation"
           />
         </div>
         <div className="">
@@ -16,6 +16,6 @@ class HomeContainer extends Component {
       </div>
     );
   }
-}
+});
 
 export default HomeContainer;

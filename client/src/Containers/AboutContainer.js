@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class AboutContainer extends Component {
+var AboutContainer = React.createClass({
   render() {
     return (
       <div className="">
         <div className="">
           <h1>About Me</h1>
-          <img className="my-pic" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRuuaYUAGXOuV73wC2gykNs_exvgQqdbJo97WfQ9bYJGnh4Q9MvNw" />
+          <img className="my-pic" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRuuaYUAGXOuV73wC2gykNs_exvgQqdbJo97WfQ9bYJGnh4Q9MvNw" alt="presentation" />
           <h5> Contact Information </h5>
             <ul>
               <li> Email: dicomitis13@gmail.com </li>
@@ -19,6 +19,6 @@ class AboutContainer extends Component {
       </div>
     );
   }
-}
+});
 
 export default AboutContainer;

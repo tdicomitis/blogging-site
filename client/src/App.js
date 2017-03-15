@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from './Navbar';
 
-class App extends Component {
-  render() {
+var App = React.createClass ({
+  render: function() {
     return (
       <div className="container">
         <Navbar />
            { this.props.children }
       </div>
-    );
+    )
   }
-}
+});
 
 export default App;

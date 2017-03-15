@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PostForm from '../PostForm';
 import $ from 'jquery';
 
@@ -17,7 +17,6 @@ var PostContainer = React.createClass({
   },
   handleSubmit: function(e) {
     e.preventDefault();
-    var self = this;
     var data = {
       content: this.state.content,
       title: this.state.title,
