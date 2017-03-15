@@ -24,7 +24,7 @@ var ShowPostContainer = React.createClass({
     return (
       <div>
         <h1> {this.state.post ? this.state.post.title : "Loading"} </h1>
-        <p> { this.props.params.blog_id } </p>
+        <p> { this.state.post ? this.state.post.content : "Loading"} </p>
       </div>
     )
   }

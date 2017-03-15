@@ -340,3 +340,37 @@ Second: Create a function to get data from server
 Third: Call function upon component mounting (console log data to ensure it works)
 
 In my wireframe, my `BlogContainer` page will be the one that hosts all of my blog posts to view, so I do not need to create a new file.
+
+----
+#### Delete a Post
+Created a function to be able to delete a blog post.
+
+We will want to create a button for each blog post, that will allow us to delete that specific post. To do this, we will create a button in our `PostCard.js` file:
+
+```js
+<button onClick={ () => props.deletePost(props.id)} className="btn btn-alarm">Delete Post</button>
+```
+Now, in our `PostList.js` we will add a delete function:
+```js
+return <PostCard content={item.content} title={item.title} id={item._id}
+        key={index} deletePost={self.props.deletePost}
+      />
+```
+Lastly, we will put our delete funciton in our `BlogContainer.js`:
+```js
+deletePost: function(id) {
+  var self=this;
+  $.ajax({
+    url: '/api/posts/' + id,
+    method: 'DELETE'
+  }).done(function(data){
+    console.log(data, "SUCCESS IN DELETING POST!");
+    self.loadAllPostsFromServer();
+  })
+},
+```
+Then, in the same file, we will 
+
+```js
+deletePost={this.deletePost}
+```

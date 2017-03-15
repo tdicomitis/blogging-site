@@ -35,10 +35,6 @@ body {
   background-color: hotpink;
 }
 
-.my-pic {
-  max-height: 120px;
-}
-
 .js-me-flex {
   display: flex;
   justify-content: center;
@@ -47,14 +43,6 @@ body {
 .para-flex {
   display: flex;
   justify-content: center;
-}
-
-.nav-item-post {
-  text-align: left;
-}
-
-.all-blogs-flex {
-  display: flex;
 }
 
 .cute-pic {
