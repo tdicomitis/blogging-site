@@ -10,6 +10,7 @@ import Blog from './Containers/BlogContainer';
 import Experience from './Containers/ExperienceContainer';
 import Post from './Containers/PostContainer';
 import ShowPost from './Containers/ShowPostContainer';
+import EditPostContainer from './Containers/EditPostContainer';
 
 ReactDOM.render((
   <Router history={browserHistory}>
@@ -23,6 +24,7 @@ ReactDOM.render((
       <Route path="/post" component={Post} />
       <Route path="/experience" component={Experience} />
       <Route path="/viewablog/:blog_id" component={ShowPost} />
+      <Route path="/editpost/:blog_id" component={EditPostContainer} />
     </Route>
 
   </Router>
