@@ -11,13 +11,14 @@ import Experience from './Containers/ExperienceContainer';
 import Post from './Containers/PostContainer';
 import ShowPost from './Containers/ShowPostContainer';
 import EditPostContainer from './Containers/EditPostContainer';
+import SignUpContainer from './UserAuth/SignUpContainer';
+import LogInContainer from './UserAuth/LogInContainer';
 
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="/home" component={Home}>
-      </Route>
+      <Route path="/home" component={Home} />
 
       <Route path="/about" component={About} />
       <Route path="/blog" component={Blog} />
@@ -25,6 +26,8 @@ ReactDOM.render((
       <Route path="/experience" component={Experience} />
       <Route path="/viewablog/:blog_id" component={ShowPost} />
       <Route path="/editpost/:blog_id" component={EditPostContainer} />
+      <Route path="/signup" component={SignUpContainer} />
+      <Route path="/login" component={LogInContainer} />
     </Route>
 
   </Router>
