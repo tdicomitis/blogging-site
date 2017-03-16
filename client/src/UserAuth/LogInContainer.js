@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
-import LogInForm from './LogInForm';
 import {browserHistory} from 'react-router';
+import LogInForm from './LogInForm';
 
 var LogInContainer = React.createClass({
   getInitialState: function() {
@@ -17,6 +17,7 @@ var LogInContainer = React.createClass({
     return this.setState({ password: password })
   },
   handleSubmit: function(e) {
+    e.preventDefault()
     var data = {
       email: this.state.email,
       password: this.state.password,
@@ -26,8 +27,13 @@ var LogInContainer = React.createClass({
       method: 'POST',
       data: data
     }).done(function(data){
-      browserHistory.push('/blog')
-      console.log(data, "SUCCESSFULL LOGIN!")
+      console.log(data, "DATA RESPONSE FROM ATTEMPT TO LOGIN!")
+      if (data._id) {
+        browserHistory.push('/home')
+      } else {
+        alert(data.message)
+          browserHistory.push('/login')
+      }
     })
   },
   render: function() {

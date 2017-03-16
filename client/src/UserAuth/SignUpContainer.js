@@ -17,6 +17,8 @@ var SignUpContainer = React.createClass({
     return this.setState({ password: password });
   },
   handleSubmit: function(e) {
+    e.preventDefault()
+    console.log("FOUND HANDLE SUBMIT FUNCTION")
     var data = {
       email: this.state.email,
       password: this.state.password,
@@ -26,8 +28,13 @@ var SignUpContainer = React.createClass({
       method: 'POST',
       data: data
     }).done(function(data){
-      browserHistory.push('/blog')
       console.log(data, "SUCCESSFULL SIGNED UP!")
+      if(data._id) {
+        browserHistory.push('/home')
+      } else {
+        alert(data.message)
+        browserHistory.push('/signup')
+      }
     })
   },
   render: function() {
