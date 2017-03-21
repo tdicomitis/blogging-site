@@ -3,15 +3,31 @@ import React from 'react';
 var HomeContainer = React.createClass({
   render() {
     return (
-      <div className="home-flex-container">
-        <div>
-          <img className="cute-pic"
-            src="https://freeiconshop.com/wp-content/uploads/edd/code-flat.png" alt="presentation"
-          />
+      <div>
+        <div className="home-flex-container">
+          <div>
+            <img className="cute-pic"
+              src="https://freeiconshop.com/wp-content/uploads/edd/code-flat.png" alt="presentation"
+            />
+          </div>
+          <div>
+            <h1>Taryn Dicomitis</h1>
+            <h6> Full Stack Javascript Developer </h6>
+          </div>
         </div>
-        <div className="">
-          <h1>Taryn Dicomitis</h1>
-          <h6> Full Stack Javascript Developer </h6>
+        <div className="hire-container">
+          <h5>Available For Hire!</h5>
+          <h5> Click to Email!</h5>
+        </div>
+        <div>
+          <ul>Skills</ul>
+            <li>Hello</li>
+            <li>put</li>
+            <li>Skills</li>
+          <ul>Experience</ul>
+            <li>Big Sky Code Academy</li>
+            <li>Montana State University</li>
+            <li>Other</li>
         </div>
       </div>
     );

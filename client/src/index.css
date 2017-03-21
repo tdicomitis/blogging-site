@@ -10,6 +10,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 220px;
+  border-bottom: 1px solid black;
+}
+
+.hire-container{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
 }
 
 .head-title-flex {
