@@ -17,27 +17,13 @@ body {
   justify-content: center;
 }
 
-.main-nav {
-  background-color: aquamarine;
-}
-
 .navbar-flex {
+  background-color: deeppink;
   display: flex;
+  font-size: 22px;
   justify-content: space-around;
   align-items: center;
   height: 100px;
-}
-
-.active-nav-btn-flex {
-  display: flex;
-  justify-content: space-bet;
-  font-size: 22px;
-  background-color: hotpink;
-}
-
-.js-me-flex {
-  display: flex;
-  justify-content: center;
 }
 
 .para-flex {
@@ -46,8 +32,6 @@ body {
 }
 
 .cute-pic {
-  display: flex;
-  justify-content: center;
   max-height: 175px;
 }
 
