@@ -13,6 +13,7 @@ import ShowPost from './Containers/ShowPostContainer';
 import EditPostContainer from './Containers/EditPostContainer';
 import SignUpContainer from './UserAuth/SignUpContainer';
 import LogInContainer from './UserAuth/LogInContainer';
+import Portfolio from './Containers/PortfolioContainer';
 
 ReactDOM.render((
   <Router history={browserHistory}>
@@ -28,6 +29,7 @@ ReactDOM.render((
       <Route path="/editpost/:blog_id" component={EditPostContainer} />
       <Route path="/signup" component={SignUpContainer} />
       <Route path="/login" component={LogInContainer} />
+      <Route path="/portfolio" component={Portfolio} />
     </Route>
 
   </Router>

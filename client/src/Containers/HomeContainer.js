@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 var HomeContainer = React.createClass({
   render() {
@@ -7,7 +8,8 @@ var HomeContainer = React.createClass({
         <div className="home-flex-container">
           <div>
             <img className="cute-pic"
-              src="https://freeiconshop.com/wp-content/uploads/edd/code-flat.png" alt="presentation"
+              src="https://freeiconshop.com/wp-content/uploads/edd/code-flat.png"
+              alt="presentation"
             />
           </div>
           <div>
@@ -17,7 +19,7 @@ var HomeContainer = React.createClass({
         </div>
         <div className="hire-container">
           <h5>Available For Hire!</h5>
-          <h5> Click to Email!</h5>
+          <Link activeClassName="active-nav-btn" className="nav-item"> Click to Email! </Link>
         </div>
         <div>
           <ul>Skills</ul>
