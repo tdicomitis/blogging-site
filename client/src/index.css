@@ -33,6 +33,11 @@ body {
   height: 100px;
 }
 
+.enter-blog {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .para-flex {
   display: flex;
   justify-content: center;

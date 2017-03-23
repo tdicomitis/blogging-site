@@ -37,7 +37,7 @@ var BlogContainer = React.createClass({
       <div>
         <h1 className="blog-header">Welcome to my Blog!</h1>
           { this.state.posts ? <PostList posts={this.state.posts} deletePost={this.deletePost}/> : null }
-        <div>
+        <div className="enter-blog">
           <Link to="/post" activeClassName="active-nav-btn" className="nav-item"> Post a Blog </Link>
         </div>
       </div>

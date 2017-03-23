@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Skills from '../HomeSkills';
+import Experience from '../HomeExperience';
 
 var HomeContainer = React.createClass({
   render() {
@@ -21,15 +23,9 @@ var HomeContainer = React.createClass({
           <h5>Available For Hire!</h5>
           <Link activeClassName="active-nav-btn" className="nav-item"> Click to Email! </Link>
         </div>
-        <div>
-          <ul>Skills</ul>
-            <li>Hello</li>
-            <li>put</li>
-            <li>Skills</li>
-          <ul>Experience</ul>
-            <li>Big Sky Code Academy</li>
-            <li>Montana State University</li>
-            <li>Other</li>
+        <div className="">
+         <Skills />
+         <Experience />
         </div>
       </div>
     );
