@@ -369,8 +369,37 @@ deletePost: function(id) {
   })
 },
 ```
-Then, in the same file, we will 
+Then, in the same file, we will
 
 ```js
 deletePost={this.deletePost}
 ```
+
+----
+#### Markdown
+
+It is useful to implement a markdown feature so that we can preview the content of our blog before we post it.
+
+To do so, first we need to install react markdown:
+
+1) In terminal, make sure you are in the root of your directory, then into the `client` folder.
+
+2) Install react markdown:
+'npm install --save react-markdown'
+
+3) Make sure it is in your package.json in the client folder
+
+After we install react markdown, we will now need to import `import ReactMarkdown from 'react-markdown';` to our `PostForm.js` folder.
+
+In our `PostContainer.js` file, we will need to implement our markdown so our PostForm will see it.
+
+```js
+previewContent={this.state.content ? this.state.content : "No content, yet" }
+```
+Now, in our `PostForm`, we will render previewContent:
+
+```js
+<ReactMarkdown source={this.props.previewContent} />
+```
+
+Now, we can test this on our blog page. When we are typing new content, we should see a preview below, if not, if will sat "No content, yet".
