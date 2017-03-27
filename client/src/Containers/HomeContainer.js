@@ -23,7 +23,7 @@ var HomeContainer = React.createClass({
           <h5>Available For Hire!</h5>
           <Link activeClassName="active-nav-btn" className="nav-item"> Click to Email! </Link>
         </div>
-        <div className="">
+        <div className="skillsandexp-container">
          <Skills />
          <Experience />
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 var PostForm = React.createClass({
   render: function() {
@@ -11,10 +12,13 @@ var PostForm = React.createClass({
           </div>
           <div className="form-group">
             <label>content</label>
-            <input onChange={ (event) => this.props.updateContent(event.target.value)} type="text-area" className="form-control" id="" />
+            <textarea onChange={ (event) => this.props.updateContent(event.target.value)} type="text-area" className="form-control" rows="10" />
           </div>
         <button type="submit" className="btn btn-default">Submit</button>
         </form>
+        <div>
+          <ReactMarkdown source={this.props.previewContent} />
+        </div>
       </div>
     );
   }

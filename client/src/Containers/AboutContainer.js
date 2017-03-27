@@ -14,7 +14,7 @@ var AboutContainer = React.createClass({
             </ul>
         </div>
         <div className="para-flex">
-          <p> "Yo, here is a bunch of random stuff about me" </p>
+          <p> "Here is a bunch of random stuff about me" </p>
         </div>
       </div>
     );

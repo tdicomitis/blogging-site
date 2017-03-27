@@ -19,6 +19,11 @@ body {
   border-bottom: 1px solid black;
 }
 
+.skillsandexp-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .head-title-flex {
   display: flex;
   justify-content: center;
@@ -30,7 +35,7 @@ body {
   font-size: 22px;
   justify-content: space-around;
   align-items: center;
-  height: 100px;
+  height: 100px;  
 }
 
 .enter-blog {

@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import ReactMarkdown from 'react-markdown';
 
 var ShowPostContainer = React.createClass({
   getInitialState: function() {
@@ -24,7 +25,7 @@ var ShowPostContainer = React.createClass({
     return (
       <div>
         <h1> {this.state.post ? this.state.post.title : "Loading"} </h1>
-        <p> { this.state.post ? this.state.post.content : "Loading"} </p>
+        <ReactMarkdown source={ this.state.post ? this.state.post.content : "Still Loading"} />
       </div>
     )
   }
