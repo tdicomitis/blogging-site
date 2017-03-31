@@ -6,7 +6,8 @@ var passport     = require('passport');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
 var mongoose     = require('mongoose');
-var uriUtil     = require('mongodb-uri');
+var uriUtil      = require('mongodb-uri');
+var path         = require('path');
 
 var options = {
 server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
