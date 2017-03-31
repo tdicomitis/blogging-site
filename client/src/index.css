@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: darkgrey;
+  background-image: url("https://previews.123rf.com/images/ssilver/ssilver1502/ssilver150200028/36969448-Cluttered-office-desk-background-Stock-Photo.jpg");
 }
 
 .home-flex-container {
@@ -30,12 +30,13 @@ body {
 }
 
 .navbar-flex {
-  background-color: deeppink;
+  background-color: white;
   display: flex;
+  opacity: 0.6;
   font-size: 22px;
   justify-content: space-around;
   align-items: center;
-  height: 100px;  
+  height: 100px;
 }
 
 .enter-blog {

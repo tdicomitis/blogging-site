@@ -5,9 +5,17 @@ var postsRouter  = require('./routes/post');
 var passport     = require('passport');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
+var mongoose     = require('mongoose');
+var uriUtil     = require('mongodb-uri');
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/blogging-site');
+var options = {
+server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};
+var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/blogging-site";
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+app.set('port', (process.env.PORT || 3001));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
