@@ -22,6 +22,7 @@
     "foreman": "^2.0.0",
     "method-override": "^2.3.7",
     "mongodb": "^2.2.25",
+    "mongodb-uri": "^0.9.7",
     "mongoose": "^4.8.6",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
