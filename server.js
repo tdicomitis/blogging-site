@@ -5,21 +5,24 @@ var postsRouter  = require('./routes/post');
 var passport     = require('passport');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
-var mongoose     = require('mongoose');
 var uriUtil      = require('mongodb-uri');
 var path         = require('path');
+
+var mongoose     = require('mongoose');
 
 var options = {
 server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
 replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
 };
-var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/blogging-site";
+var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/ms-blogging-site";
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri, options);
 
 app.set('port', (process.env.PORT || 3001));
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true}));
 app.use(cookieParser());
 
 // Express only serves static assets in production
@@ -42,7 +45,7 @@ app.use(session({
 }));
 // routes ======================================================================
 require('./config/passport')(passport); // pass passport for configuration
-require('./routes/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passpo
+require('./routes/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 app.use('/api/posts', postsRouter);
 
@@ -50,6 +53,7 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, clientPath, 'index.html'));
 });
 
-app.listen(app.get('port'), function(){
-  console.log('Server 🔥🔥🔥ed up on PORT', app.get('port'))
+
+app.listen(app.get('port'), () => {
+  console.log(`🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
 });
