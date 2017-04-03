@@ -44,8 +44,6 @@ app.use(session({
 require('./config/passport')(passport); // pass passport for configuration
 require('./routes/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passpo
 
-app.set('port', process.env.PORT || 3001);
-
 app.use('/api/posts', postsRouter);
 
 app.get('*', function (req, res) {

@@ -6,7 +6,7 @@ Router.route('/')
   .get(function(req, res){
    Post.find(function(err, data){
      if(err){
-       console.log("Error finding post")
+       res.status(500).send(err, "ERROR FINDING ALL POSTS");
      } else {
        res.json(data)
      }
