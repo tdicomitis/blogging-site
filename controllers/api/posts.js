@@ -13,6 +13,14 @@ exports.all = function(req, res){
   })
 }
 
+exports.all = () => {
+  Post.find(function(err, data){
+    if(!data) return res.status(404).send("No Posts Found");
+    if(err) return res.status(500).send(err, "ERROR FINDING ALL POSTS");
+    res.json(data);
+  })
+}
+
 exports.create = function(req, res){
   var newPost = new Post();
   newPost.content = req.body.content;

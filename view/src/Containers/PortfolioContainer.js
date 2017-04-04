@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-var PortfolioContainer = React.createClass({
+export default class PortfolioContainer extends Component {
   render() {
     return (
       <div className="">
@@ -10,6 +10,4 @@ var PortfolioContainer = React.createClass({
       </div>
     );
   }
-});
-
-export default PortfolioContainer;
+}

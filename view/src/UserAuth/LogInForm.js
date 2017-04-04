@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-var LogInForm = React.createClass({
-  render: function() {
+export default class LogInForm extends Component {
+  render() {
     return(
       <div>
         <form onSubmit={this.props.handleSubmit}>
@@ -18,6 +18,4 @@ var LogInForm = React.createClass({
       </div>
     )
   }
-});
-
-export default LogInForm;
+}

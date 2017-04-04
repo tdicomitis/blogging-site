@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-var AboutContainer = React.createClass({
+export default class AboutContainer extends Component{
   render() {
     return (
       <div>
@@ -19,6 +19,4 @@ var AboutContainer = React.createClass({
       </div>
     );
   }
-});
-
-export default AboutContainer;
+};

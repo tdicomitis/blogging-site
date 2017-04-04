@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router';
 import Skills from '../HomeSkills';
 import Experience from '../HomeExperience';
 
-var HomeContainer = React.createClass({
+export default class HomeContainer extends Component {
   render() {
     return (
       <div>
@@ -30,6 +30,4 @@ var HomeContainer = React.createClass({
       </div>
     );
   }
-});
-
-export default HomeContainer;
+}

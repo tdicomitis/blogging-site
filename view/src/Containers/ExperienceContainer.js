@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-var ExperienceContainer = React.createClass({
+export default class ExperienceContainer extends Component{
   render() {
     return (
       <div className="">
@@ -8,8 +8,6 @@ var ExperienceContainer = React.createClass({
           <h1>Experience</h1>
         </div>
       </div>
-    );
+    )
   }
-});
-
-export default ExperienceContainer;
+}
