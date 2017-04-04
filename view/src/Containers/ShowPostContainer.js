@@ -1,27 +1,19 @@
-import React from 'react';
-import $ from 'jquery';
+import React, {Component} from 'react';
 import ReactMarkdown from 'react-markdown';
 
-var ShowPostContainer = React.createClass({
-  getInitialState: function() {
-    return {
-      post: null
-    }
-  },
-  loadPostFromServer: function() {
-    var self=this;
-    $.ajax({
-      url: '/api/posts/' + this.props.params.blog_id,
-      method: "GET"
-    }).done(function(data){
-      console.log (data, "THIS IS DATA FOR ONE POST")
-      self.setState({ post: data })
-    })
-  },
-  componentDidMount: function() {
+class ShowPostContainer extends Component {
+  state = {
+    post: null
+  }
+  loadPostFromServer() {
+    fetch(`/api/posts/${this.props.params.blog_id}`)
+      .then(blob => blob.json())
+      .then(post => this.setState({ post }))
+  }
+  componentDidMount() {
     this.loadPostFromServer()
-  },
-  render: function() {
+  }
+  render() {
     return (
       <div>
         <h1> {this.state.post ? this.state.post.title : "Loading"} </h1>
@@ -29,6 +21,6 @@ var ShowPostContainer = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default ShowPostContainer;

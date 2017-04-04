@@ -1,38 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router';
 import $ from 'jquery';
 import PostList from '../PostList';
 
-var BlogContainer = React.createClass({
-  getInitialState: function() {
-    return {
-      posts: null
-    }
-  },
-  componentDidMount: function() {
-    this.loadAllPostsFromServer()
-  },
-  loadAllPostsFromServer: function() {
-    var self=this;
+class BlogContainer extends Component {
+  state = {
+    posts: null
+  }
+  deletePost = this.deletePost.bind(this)
+
+  componentDidMount = () => this.loadAllPostsFromServer();
+
+  loadAllPostsFromServer(){
     $.ajax({
       url: '/api/posts',
       method: 'GET'
-    }).done(function(data){
-      console.log(data, "POST FROM SERVER!")
-      self.setState({ posts: data })
-    })
-  },
-  deletePost: function(id) {
-    var self=this;
+    }).done(posts => this.setState({ posts }))
+  }
+  deletePost(id){
     $.ajax({
       url: '/api/posts/' + id,
       method: 'DELETE'
-    }).done(function(data){
-      console.log(data, "SUCCESS IN DELETING POST!");
-      self.loadAllPostsFromServer();
+    }).done((data) => {
+      this.loadAllPostsFromServer();
     })
-  },
-  render: function() {
+  }
+  render() {
     return (
       <div>
         <h1 className="blog-header">Welcome to my Blog!</h1>
@@ -43,6 +36,6 @@ var BlogContainer = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default BlogContainer;

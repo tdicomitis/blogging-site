@@ -1,31 +1,18 @@
-// var Router = new express.Router();
+const Post = require ('../../models/post')
 
-var Post = require ('../../models/post')
-
-exports.all = function(req, res){
-  Post.find(function(err, data){
-    if(!data) return res.status(404).send("No Posts Found");
-    if(err){
-      res.status(500).end(err, "ERROR FINDING ALL POSTS");
-    }else{
-      res.json(data);
-    }
-  })
-}
-
-exports.all = () => {
-  Post.find(function(err, data){
+exports.all = (req, res) => {
+  Post.find((err, data) => {
     if(!data) return res.status(404).send("No Posts Found");
     if(err) return res.status(500).send(err, "ERROR FINDING ALL POSTS");
     res.json(data);
   })
 }
 
-exports.create = function(req, res){
+exports.create = (req, res) => {
   var newPost = new Post();
   newPost.content = req.body.content;
   newPost.title = req.body.title;
-  newPost.save(function(err, data){
+  newPost.save((err, data) => {
     if(!data) return res.status(404).send("Cannot Create Post");
    if(err){
     res.status(500).end(err, "ERROR SAVING POSTS");
@@ -35,8 +22,8 @@ exports.create = function(req, res){
   })
 }
 
-exports.getOne = function(req, res){
-  Post.findById(req.params.post_id, function(err, data){
+exports.getOne = (req, res) => {
+  Post.findById(req.params.post_id, (err, data) => {
     if(!data) return res.status(404).send("Cannot Find Post With That ID");
     if(err){
       res.status(500).end(err, "ERROR GETTING ONE POST")
@@ -46,8 +33,8 @@ exports.getOne = function(req, res){
   })
 }
 
-exports.destroy = function(req, res){
-  Post.remove({ _id: req.params.post_id}, function(err, post){
+exports.destroy = (req, res) => {
+  Post.remove({ _id: req.params.post_id}, (err, post) => {
     if(!post) res.status(404).send("No Post With That ID");
     if(err){
       res.status(500).end(err, "Internal Server Error")
@@ -57,8 +44,8 @@ exports.destroy = function(req, res){
   })
 }
 
-exports.modify = function(req, res){
-  Post.findById(req.params.post_id, function(err,post){
+exports.modify = (req, res) => {
+  Post.findById(req.params.post_id, (err,post) => {
     if(!post) res.status(404).send("Cannot Edit With That ID");
     if(err){
       res.status(500).end(err, "Internal Server Error")
@@ -66,7 +53,7 @@ exports.modify = function(req, res){
       post.content = req.body.content ? req.body.content : post.content;
       post.title = req.body.title ? req.body.title : post.title;
 
-      post.save(function(err, updatedPost){
+      post.save((err, updatedPost) => {
         if(err){
           console.log(err)
         }else{

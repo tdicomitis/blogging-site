@@ -1,13 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class PortfolioContainer extends Component {
-  render() {
-    return (
-      <div className="">
-        <div className="head-title-flex">
-          <h1>Portfolio</h1>
-        </div>
-      </div>
-    );
-  }
-}
+const PortfolioContainer = (props) =>
+  <div className="">
+    <div className="head-title-flex">
+      <h1>Portfolio</h1>
+    </div>
+  </div>
+
+export default PortfolioContainer;
