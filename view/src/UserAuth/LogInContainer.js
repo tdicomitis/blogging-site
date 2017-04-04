@@ -1,33 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
 import LogInForm from './LogInForm';
 
-var LogInContainer = React.createClass({
-  getInitialState: function() {
-    return {
-      email: null,
-      password: null
-    }
-  },
-  updateEmail: function(email){
-    return this.setState({ email: email })
-  },
-  updatePassword: function(password){
-    return this.setState({ password: password })
-  },
-  handleSubmit: function(e) {
-    e.preventDefault()
-    var data = {
+class LogInContainer extends Component {
+  state = {
+    email: null,
+    password: null
+  }
+  updateEmail = (email) => this.setState({ email })
+
+  updatePassword = (password) => this.setState({ password })
+  handleSubmit = this.handleSubmit.bind(this)
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const data = {
       email: this.state.email,
-      password: this.state.password,
-    };
+      password: this.state.password
+    }
     $.ajax({
-      url:'/api/login',
+      url:'/api/login/',
       method: 'POST',
       data: data
-    }).done(function(data){
-      console.log(data, "DATA RESPONSE FROM ATTEMPT TO LOGIN!")
+    }).done((data) => {
       if (data._id) {
         browserHistory.push('/home')
       } else {
@@ -35,9 +31,9 @@ var LogInContainer = React.createClass({
           browserHistory.push('/login')
       }
     })
-  },
-  render: function() {
-    return (
+  }
+  render() {
+    return(
       <div>
         <h1> Login! </h1>
         <LogInForm updateEmail={this.updateEmail}
@@ -47,7 +43,6 @@ var LogInContainer = React.createClass({
       </div>
     )
   }
-});
-
+};
 
 export default LogInContainer;

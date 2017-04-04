@@ -1,34 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 import $ from 'jquery';
 import SignUpForm from './SignUpForm';
 import {browserHistory} from 'react-router';
 
-var SignUpContainer = React.createClass({
-  getInitialState: function() {
-    return {
-      email: null,
-      password: null
-    }
-  },
-  updateEmail: function(email) {
-    return this.setState({ email: email });
-  },
-  updatePassword: function(password) {
-    return this.setState({ password: password });
-  },
-  handleSubmit: function(e) {
+class SignUpContainer extends Component {
+  state = {
+    email: null,
+    password: null
+  }
+  updateEmail = (email) => this.setState({ email })
+
+  updatePassword = (password) => this.setState({ password })
+  handleSubmit = this.handleSubmit.bind(this)
+
+  handleSubmit(e) {
     e.preventDefault()
-    console.log("FOUND HANDLE SUBMIT FUNCTION")
-    var data = {
+    const data = {
       email: this.state.email,
-      password: this.state.password,
+      password: this.state.password
     };
     $.ajax({
       url:'/api/signup',
       method: 'POST',
       data: data
-    }).done(function(data){
-      console.log(data, "SUCCESSFULL SIGNED UP!")
+    }).done((data) => {
       if(data._id) {
         browserHistory.push('/home')
       } else {
@@ -36,18 +31,20 @@ var SignUpContainer = React.createClass({
         browserHistory.push('/signup')
       }
     })
-  },
-  render: function() {
-    return (
+  }
+  render() {
+    return(
       <div>
         <h1> Sign Up! </h1>
         <SignUpForm updateEmail={this.updateEmail}
-          updatePassword={this.updatePassword}
-          handleSubmit={this.handleSubmit}
+                    updatePassword={this.updatePassword}
+                    handleSubmit={this.handleSubmit}
         />
       </div>
     )
   }
-});
+}
+
+
 
 export default SignUpContainer;

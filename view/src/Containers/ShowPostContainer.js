@@ -11,7 +11,7 @@ class ShowPostContainer extends Component {
       .then(post => this.setState({ post }))
   }
   componentDidMount() {
-    this.loadPostFromServer()
+    this.loadPostFromServer();
   }
   render() {
     return (

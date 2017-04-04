@@ -9,13 +9,14 @@ class BlogContainer extends Component {
   }
   deletePost = this.deletePost.bind(this)
 
-  componentDidMount = () => this.loadAllPostsFromServer();
+  componentDidMount() {
+    this.loadAllPostsFromServer();
+  }
 
   loadAllPostsFromServer(){
-    $.ajax({
-      url: '/api/posts',
-      method: 'GET'
-    }).done(posts => this.setState({ posts }))
+    fetch(`/api/posts/`)
+      .then(blob => blob.json())
+      .then(posts => this.setState({ posts }))
   }
   deletePost(id){
     $.ajax({

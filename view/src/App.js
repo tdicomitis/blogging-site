@@ -1,15 +1,10 @@
 import React from 'react';
 import Navbar from './Navbar';
 
-var App = React.createClass ({
-  render: function() {
-    return (
-      <div className="container">
-        <Navbar />
-           { this.props.children }
-      </div>
-    )
-  }
-});
+const App = (props) =>
+  <div className="container">
+    <Navbar />
+      { props.children }
+  </div>
 
 export default App;

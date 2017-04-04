@@ -7,18 +7,17 @@ class EditPostContainer extends Component {
     content: null,
     title: null
   }
-  componentDidMount = () => this.loadAllPostsFromServer
+  componentDidMount = () => this.loadAllPostsFromServer();
 
-  updateContent(content) {
-    return this.setState({ content })
-  }
-  updateTitle(title){
-    return this.setState({ title })
-  }
+  updateContent = (content) => this.setState({ content })
+
+  updateTitle = (title) => this.setState({ title })
+  handleSubmit = this.handleSubmit.bind(this)
+
   loadAllPostsFromServer() {
-    fetch(`/api/posts ${this.props.params.blog_id}`)
+    fetch(`/api/posts/${this.props.params.blog_id}`)
       .then(blob => blob.json())
-      .then(post => this.setState({ post }))
+      .then(post => this.setState({ title: post.title, content: post.content }))
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -38,11 +37,11 @@ class EditPostContainer extends Component {
         <h1> Hello From Edit! </h1>
           { this.state.content && this.state.title ?
              <EditForm content={this.state.content}
-              title={this.state.title}
-              updateContent={this.updateContent}
-              updateTitle={this.updateTitle}
-              handleSubmit={this.handleSubmit}
-            /> : null }
+                title={this.state.title}
+                updateContent={this.updateContent}
+                updateTitle={this.updateTitle}
+                handleSubmit={this.handleSubmit}
+              /> : null }
       </div>
       )
     }
