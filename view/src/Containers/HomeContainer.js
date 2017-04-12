@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import Skills from '../HomeSkills';
 import Experience from '../HomeExperience';
 
@@ -19,7 +18,10 @@ const HomeContainer = (props) =>
     </div>
     <div className="hire-container">
       <h5>Available For Hire!</h5>
-      <Link activeClassName="active-nav-btn" className="nav-item"> Click to Email! </Link>
+      <ul>
+        <li> Email: dicomitis13@gmail.com </li>
+        <li> Phone: 406-396-6094 </li>
+      </ul>
     </div>
     <div className="skillsandexp-container">
      <Skills />
