@@ -39,4 +39,15 @@ module.exports = function(app, passport) {
 
     })(req, res, next);
   });
+  app.get('/api/getuser', function(req, res) {
+    console.log(req.user, "TRYING TO GET USER")
+    if(req.user) {
+      console.log('User logged in');
+      res.json(req.user)
+    } else {
+      res.json({
+        message: 'No user logged in'
+      })
+    }
+  })
 }

@@ -20,7 +20,7 @@ class PostContainer extends Component{
       title: this.state.title,
   };
   $.ajax({
-    url: '/api/posts',
+    url: '/api/posts/',
     method: 'POST',
     data: data
   }).done((data) => {

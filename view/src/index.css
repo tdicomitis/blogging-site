@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-image: url("https://previews.123rf.com/images/ssilver/ssilver1502/ssilver150200028/36969448-Cluttered-office-desk-background-Stock-Photo.jpg");
+  /*background-image: url("https://previews.123rf.com/images/ssilver/ssilver1502/ssilver150200028/36969448-Cluttered-office-desk-background-Stock-Photo.jpg");*/
+  background-color: darkgrey;
 }
 
 .home-flex-container {
@@ -11,6 +12,32 @@ body {
   align-items: center;
   height: 220px;
   border-bottom: 1px solid black;
+}
+
+.big-sky-code {
+  max-height: 45px;
+}
+
+.react-pic {
+  max-height: 50px;
+}
+
+.javascript-pic{
+  max-height: 45px;
+}
+
+.mt-state {
+  max-height: 65px;
+}
+
+.htmlcss-pic{
+  max-height: 55px;
+}
+
+.intro-to-me {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .hire-container{
@@ -33,7 +60,7 @@ body {
   background-color: white;
   display: flex;
   opacity: 0.6;
-  font-size: 22px;
+  font-size: 20px;
   justify-content: space-around;
   align-items: center;
   height: 100px;
@@ -41,7 +68,9 @@ body {
 
 .enter-blog {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .para-flex {
@@ -50,7 +79,7 @@ body {
 }
 
 .cute-pic {
-  max-height: 175px;
+  max-height: 140px;
 }
 
 .blog-header {

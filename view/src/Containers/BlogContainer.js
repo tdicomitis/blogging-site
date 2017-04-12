@@ -33,6 +33,7 @@ class BlogContainer extends Component {
           { this.state.posts ? <PostList posts={this.state.posts} deletePost={this.deletePost}/> : null }
         <div className="enter-blog">
           <Link to="/post" activeClassName="active-nav-btn" className="nav-item"> Post a Blog </Link>
+          <Link to="/login" activeClassName="active-nav-btn" className="nav-item"> Log In </Link>
         </div>
       </div>
     )

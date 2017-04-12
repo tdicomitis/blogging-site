@@ -12,9 +12,9 @@ const HomeContainer = (props) =>
           alt="presentation"
         />
       </div>
-      <div>
+      <div className="intro-to-me">
         <h1>Taryn Dicomitis</h1>
-        <h6> Full Stack Javascript Developer </h6>
+        <h6>Full Stack Javascript Developer</h6>
       </div>
     </div>
     <div className="hire-container">
