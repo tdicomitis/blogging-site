@@ -52,7 +52,7 @@ describe('/POST post', () => {
         res.body.should.have.property('message').eql('Post successfully added!');
         res.body.data.should.have.property('title');
         res.body.data.should.have.property('content');
-        res.body.data.content.should.be.a('array');
+        res.body.data.content.should.be.a('string');
         done();
       })
   })
