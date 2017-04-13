@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --no-deprecation --sort --colors --bail",
     "dev": "concurrently \"npm run serverr\" \"npm run client\"",
     "start": "NODE_ENV=production nf start -p $PORT",
     "serverr": "babel-node server.js",
@@ -27,5 +27,9 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "uri": "^0.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0"
   }
 }

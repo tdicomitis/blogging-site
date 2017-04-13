@@ -13,11 +13,10 @@ exports.create = (req, res) => {
   newPost.content = req.body.content;
   newPost.title = req.body.title;
   newPost.save((err, data) => {
-    if(!data) return res.status(404).send("Cannot Create Post");
    if(err){
-    res.status(500).end(err, "ERROR SAVING POSTS");
+    res.send(err);
     }else{
-      res.json(data);
+      res.json({data: data, message: 'Post successfully added!'});
     }
   })
 }
