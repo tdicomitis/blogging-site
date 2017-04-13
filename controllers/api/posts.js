@@ -1,4 +1,6 @@
-const Post = require ('../../models/post')
+const Post    = require ('../../models/post')
+const express = require('express');
+const Router  = express.Router();
 
 exports.all = (req, res) => {
   Post.find((err, data) => {
@@ -23,9 +25,8 @@ exports.create = (req, res) => {
 
 exports.getOne = (req, res) => {
   Post.findById(req.params.post_id, (err, data) => {
-    if(!data) return res.status(404).send("Cannot Find Post With That ID");
     if(err){
-      res.status(500).end(err, "ERROR GETTING ONE POST")
+      res.send(err);
     }else{
       res.json(data);
     }
@@ -34,9 +35,8 @@ exports.getOne = (req, res) => {
 
 exports.destroy = (req, res) => {
   Post.remove({ _id: req.params.post_id}, (err, post) => {
-    if(!post) res.status(404).send("No Post With That ID");
     if(err){
-      res.status(500).end(err, "Internal Server Error")
+      res.send(err);
     }else{
       res.json({ message: "SUCCESSFULLY DELETED POST" })
     }
@@ -45,20 +45,20 @@ exports.destroy = (req, res) => {
 
 exports.modify = (req, res) => {
   Post.findById(req.params.post_id, (err,post) => {
-    if(!post) res.status(404).send("Cannot Edit With That ID");
-    if(err){
-      res.status(500).end(err, "Internal Server Error")
+    if(err) {
+      res.send(err);
     }else{
       post.content = req.body.content ? req.body.content : post.content;
       post.title = req.body.title ? req.body.title : post.title;
 
       post.save((err, updatedPost) => {
-        if(err){
-          console.log(err)
-        }else{
-          res.json(updatedPost);
-        }
-      })
+       if(err){
+         console.log(err)
+       }else{
+         res.json({updatedPost, message: 'Post Updated!'});
+       }
+     })
+
     }
   })
 }
