@@ -90,12 +90,14 @@ body {
   float: left;
 }
 
-
-.head-title-flex {
-  display: flex;
-  justify-content: center;
+.blog-post-style {
+  border-style: double;
+  border-color: deeppink;
 }
 
+.all-of-posts {
+  max-width: 425px;
+}
 
 .enter-blog {
   display: flex;
@@ -106,4 +108,9 @@ body {
 
 .blog-header {
   text-align: center;
+}
+
+.head-title-flex {
+  display: flex;
+  justify-content: center;
 }
