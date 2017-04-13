@@ -4,15 +4,16 @@ import EditForm from '../EditForm';
 
 class EditPostContainer extends Component {
   state = {
-    content: null,
-    title: null
+    title: null,
+    content: null
   }
   componentDidMount = () => this.loadAllPostsFromServer();
 
-  updateContent = (content) => this.setState({ content })
-
   updateTitle = (title) => this.setState({ title })
   handleSubmit = this.handleSubmit.bind(this)
+
+  updateContent = (content) => this.setState({ content })
+
 
   loadAllPostsFromServer() {
     fetch(`/api/posts/${this.props.params.blog_id}`)
@@ -22,8 +23,8 @@ class EditPostContainer extends Component {
   handleSubmit(e) {
     e.preventDefault();
     var data = {
-      content: this.state.content,
       title: this.state.title,
+      content: this.state.content,
     };
   $.ajax({
     url: `/api/posts/${this.props.params.blog_id}`,

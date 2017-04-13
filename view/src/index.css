@@ -6,12 +6,30 @@ body {
   background-color: darkgrey;
 }
 
+.navbar-flex {
+  background-color: white;
+  display: flex;
+  opacity: 0.6;
+  font-size: 20px;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+}
+
 .home-flex-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 220px;
   border-bottom: 1px solid black;
+}
+
+.email-icon {
+  max-height: 45px;
+}
+
+.phone-icon {
+  max-height: 46px;
 }
 
 .big-sky-code {
@@ -46,40 +64,44 @@ body {
   border-bottom: 1px solid black;
 }
 
+.av-for-hire {
+  display: flex;
+  align-items: center;
+}
+
+.cute-pic {
+  max-height: 140px;
+}
+
 .skillsandexp-container {
   display: flex;
   justify-content: space-around;
 }
+
+.site-wrap {
+  max-width: 910px;
+  margin: 100px auto;
+  background: hotpink;
+  padding:40px;
+  text-align: justify;
+}
+
+.my-pic {
+  float: left;
+}
+
 
 .head-title-flex {
   display: flex;
   justify-content: center;
 }
 
-.navbar-flex {
-  background-color: white;
-  display: flex;
-  opacity: 0.6;
-  font-size: 20px;
-  justify-content: space-around;
-  align-items: center;
-  height: 100px;
-}
 
 .enter-blog {
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: flex-end;
-}
-
-.para-flex {
-  display: flex;
-  justify-content: center;
-}
-
-.cute-pic {
-  max-height: 140px;
 }
 
 .blog-header {

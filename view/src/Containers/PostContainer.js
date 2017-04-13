@@ -5,19 +5,19 @@ import {browserHistory} from 'react-router';
 
 class PostContainer extends Component{
   state = {
-    content: null,
-    title: null
+    title: null,
+    content: null
   }
-  updateContent = (content) => this.setState({ content })
-
   updateTitle = (title) => this.setState({ title })
   handleSubmit = this.handleSubmit.bind(this)
+
+  updateContent = (content) => this.setState({ content })
 
   handleSubmit(e){
     e.preventDefault();
     const data = {
-      content: this.state.content,
       title: this.state.title,
+      content: this.state.content,
   };
   $.ajax({
     url: '/api/posts/',
