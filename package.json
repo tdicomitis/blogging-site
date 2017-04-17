@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --no-deprecation --sort --colors --bail",
+    "test": "NODE_ENV=test mocha --no-deprecation --sort --colors --bail",
     "dev": "concurrently \"npm run serverr\" \"npm run client\"",
     "start": "NODE_ENV=production nf start -p $PORT",
     "serverr": "babel-node server.js",

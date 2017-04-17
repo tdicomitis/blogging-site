@@ -13,24 +13,16 @@ const HomePageInfo = props => (
       <div className="intro-to-me">
         <h1>Taryn Dicomitis</h1>
         <h5>Full Stack Javascript Developer</h5>
-        <a
-          href="https://twitter.com/tarynrenee13"
-          class="twitter-follow-button"
-          data-show-count="false"
-        >
+        <a href="https://twitter.com/tarynrenee13" data-show-count="false">
           <img
             className="twitter-pic"
             src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png"
             alt=""
           />
-          Twiter
+          Twitter
         </a>
-        <script async src="//platform.twitter.com/widgets.js" charset="utf-8" />
-        <a
-          href="https://github.com/tdicomitis"
-          class="github-follow-button"
-          data-show-count="false"
-        >
+        <script async src="//platform.twitter.com/widgets.js" />
+        <a href="https://github.com/tdicomitis" data-show-count="false">
           <img
             className="github-pic"
             src="http://datascience.massmutual.com/static/img/github-footer.png"
@@ -38,7 +30,7 @@ const HomePageInfo = props => (
           />
           GitHub
         </a>
-        <script async src="//platform.twitter.com/widgets.js" charset="utf-8" />
+        <script async src="//platform.twitter.com/widgets.js" />
       </div>
     </div>
     <div className="hire-container">
@@ -55,11 +47,7 @@ const HomePageInfo = props => (
           dicomitis13@gmail.com
         </p>
         <p>
-          <img
-            className="phone-icon"
-            src="http://www.valledelcocora.com.co/img/iconos/fijo-n.png"
-            alt=""
-          />
+          <img className="phone-icon" src="http://www.valledelcocora.com.co/img/iconos/fijo-n.png" alt="" />
           406-396-6094
         </p>
       </div>

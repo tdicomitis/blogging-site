@@ -1,8 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Philosopher', sans-serif;
   background-color: darkgrey;
+  font-size: 17px;
 }
 
 .navbar-flex {
@@ -15,8 +16,16 @@ body {
   height: 100px;
 }
 
+.resume-header {
+  font-size: 35px;
+  color: #565657;
+}
+
+.linkedin-pic {
+  max-height: 20px;
+}
+
 .home-cont {
-  /*background-image: url("https://images.pexels.com/photos/92905/pexels-photo-92905.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");*/
   color: black;
 }
 
@@ -92,7 +101,6 @@ body {
 .skillsandexp-container {
   display: flex;
   justify-content: space-around;
-  border-bottom: 1px solid black;
 }
 
 .site-wrap {
