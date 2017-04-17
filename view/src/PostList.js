@@ -9,7 +9,7 @@ class PostList extends Component {
             />
     });
     return (
-      <div className="">
+      <div className="all-of-posts">
         { postCards }
       </div>
     )

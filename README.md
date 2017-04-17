@@ -402,4 +402,4 @@ Now, in our `PostForm`, we will render previewContent:
 <ReactMarkdown source={this.props.previewContent} />
 ```
 
-Now, we can test this on our blog page. When we are typing new content, we should see a preview below, if not, if will sat "No content, yet".
+Now, we can test this on our blog page. When we are typing new content, we should see a preview below, if not, if will say "No content, yet".

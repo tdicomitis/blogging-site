@@ -29,10 +29,10 @@ class BlogContainer extends Component {
   render() {
     return (
       <div>
-        <div className="blog-header">
+        <div className="head-title-flex">
           <h1>Welcome to my Blog!</h1>
         </div>
-        <div className="all-of-posts">
+        <div>
           { this.state.posts ? <PostList posts={this.state.posts} deletePost={this.deletePost}/> : null }
         </div>
         <div className="enter-blog">

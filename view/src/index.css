@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  /*background-image: url("https://previews.123rf.com/images/ssilver/ssilver1502/ssilver150200028/36969448-Cluttered-office-desk-background-Stock-Photo.jpg");*/
   background-color: darkgrey;
 }
 
@@ -14,6 +13,11 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 100px;
+}
+
+.home-cont {
+  /*background-image: url("https://images.pexels.com/photos/92905/pexels-photo-92905.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");*/
+  color: black;
 }
 
 .home-flex-container {
@@ -58,10 +62,9 @@ body {
   flex-direction: column;
 }
 
-.hire-container{
+.git-twitter {
   display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid black;
+  align-items: center;
 }
 
 .av-for-hire {
@@ -73,9 +76,23 @@ body {
   max-height: 140px;
 }
 
+.github-pic {
+  max-height: 22px;
+}
+.twitter-pic {
+  max-height: 24px;
+}
+
+.hire-container{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+}
+
 .skillsandexp-container {
   display: flex;
   justify-content: space-around;
+  border-bottom: 1px solid black;
 }
 
 .site-wrap {
@@ -92,11 +109,12 @@ body {
 
 .blog-post-style {
   border-style: double;
-  border-color: deeppink;
+  border-color: turquoise;
 }
 
 .all-of-posts {
-  max-width: 425px;
+  display: flex;
+  flex-direction: column;
 }
 
 .enter-blog {
@@ -104,10 +122,6 @@ body {
   flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: flex-end;
-}
-
-.blog-header {
-  text-align: center;
 }
 
 .head-title-flex {

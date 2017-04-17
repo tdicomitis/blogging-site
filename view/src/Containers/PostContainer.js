@@ -29,7 +29,7 @@ class PostContainer extends Component{
   }
   render() {
     return (
-      <div className="">
+      <div>
         <h1> Post a New Blog! </h1>
         <PostForm updateTitle={this.updateTitle}
                   updateContent={this.updateContent}
