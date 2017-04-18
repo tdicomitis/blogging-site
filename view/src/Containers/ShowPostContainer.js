@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactMarkdown from 'react-markdown';
+import CommentContainer from './CommentContainer';
 
 class ShowPostContainer extends Component {
   state = {
@@ -18,6 +19,7 @@ class ShowPostContainer extends Component {
       <div>
         <h1> {this.state.post ? this.state.post.title : "Loading"} </h1>
         <ReactMarkdown source={ this.state.post ? this.state.post.content : "Still Loading"} />
+        <CommentContainer id={this.props.params.blog_id} />
       </div>
     )
   }

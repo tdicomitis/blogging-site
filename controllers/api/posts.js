@@ -66,9 +66,11 @@ exports.modify = (req, res) => {
 };
 
 exports.createComment = (req, res) => {
+  console.log(req.user, "CoMmEnT");
   var comment = new Comment();
   comment.content = req.body.content;
   comment.author = req.user ? req.user._id : testUserId;
+  console.log(comment.author, "AuThOr?");
 
   comment.save((err, comment) => {
     Post.findById(req.params.post_id, (err, post) => {
