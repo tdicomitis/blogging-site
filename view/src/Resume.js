@@ -62,7 +62,7 @@ const Resume = (props) =>
       <p> Feb 2017-May 2017</p>
       <p>Currently completing an intensive 12-week full stack web development boot camp
       to gain proficiency in relational and non-relational databases, JavaSctipt, jQuery,
-      HTML, CSS, Git, and Software Dev Methods. Participatd in group projects as well as individual. </p>
+      HTML, CSS, Git, and Software Dev Methods. Participatd in group projects as well as individual work. </p>
     </div>
     <div>
       <h4 className="company-name"> Montana State University</h4>

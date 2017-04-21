@@ -32,12 +32,12 @@ class BlogContainer extends Component {
         <div className="head-title-flex">
           <h1>Welcome to my Blog!</h1>
         </div>
-        <div>
-          { this.state.posts ? <PostList posts={this.state.posts} deletePost={this.deletePost}/> : null }
-        </div>
         <div className="enter-blog">
           <Link to="/post" activeClassName="active-nav-btn" className="nav-item"> Post a Blog </Link>
           <Link to="/login" activeClassName="active-nav-btn" className="nav-item"> Log In </Link>
+        </div>
+        <div>
+          { this.state.posts ? <PostList posts={this.state.posts} deletePost={this.deletePost}/> : null }
         </div>
       </div>
     )
