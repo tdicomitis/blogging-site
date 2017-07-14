@@ -5,7 +5,7 @@ const AboutMeParagraph = (props) =>
     <p><img className="my-pic" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRuuaYUAGXOuV73wC2gykNs_exvgQqdbJo97WfQ9bYJGnh4Q9MvNw"
     alt="presentation" /><p>Short version: Adventurer. DayDreamer. Harry Potter Enthusiast. Aspiring Web Developer.</p>
     <p>
-      Long version: I am currently competing an intensive 12 week coding bootcamp. The end goal?
+      Long version: I am currently completing an intensive 12 week coding bootcamp. The end goal?
       Become a Full Stack Web Developer. Now, how did I get here? After college, having no clue
       what I wanted to do, I did as anyone would, traveled Europe. Upon my return, my problem (obviously)
       had not been solved. Then I did something I have always wanted to do, move to Boston. In Boston I

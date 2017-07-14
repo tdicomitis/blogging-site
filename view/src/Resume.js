@@ -2,9 +2,7 @@ import React from 'react';
 
 const Resume = (props) =>
   <div>
-    <div>
       <h2 className="resume-header">Experience</h2>
-    </div>
     <div>
       <h4 className="company-name"> Big Sky Code Acacemy</h4>
       <p> Missoula, MT </p>
@@ -25,7 +23,7 @@ const Resume = (props) =>
       <h2>Skill Summary</h2>
       <div className="skills-summary">
         <div className="skills">
-          <h4 className="skill-title">Languages</h4>
+          <h4 className="skill-title">Front-End</h4>
           <ul>
             <li>HTML5 / CSS3 </li>
             <li>Javascript</li>
@@ -36,18 +34,19 @@ const Resume = (props) =>
         <div className="skills">
           <h4 className="skill-title">Back-End</h4>
             <ul>
-              <li>HTML5 / CSS3 </li>
-              <li>Javascript</li>
-              <li>React</li>
+              <li>Mongo</li>
+              <li>Chai</li>
+              <li>Mocha</li>
               <li>jQuery</li>
             </ul>
         </div>
         <div className="skills">
           <h4 className="skill-title">General</h4>
             <ul>
-              <li>HTML5 / CSS3</li>
+              <li>Customer Service</li>
               <li>Javascript</li>
               <li>jQuery</li>
+              <li> jQuery </li>
             </ul>
         </div>
       </div>
